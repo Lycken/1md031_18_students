@@ -14,19 +14,19 @@ Before you submit the final version of your labs, make sure that your project fu
 ## 02 HTML
 
 Create an index.html file which contains:
-- [X ] A headline
-- [X ] A section to select burgers that contains at least three items. Each item has:
-	- [X ] A name
-	- [ X] An image
-	- [ X] Information about allergies 
-- [X ] A section to collect customer information:
-	- [ X] First- and Last Name (in one field)
-	- [ X] E-Mail Address
-	- [ X] Street
-	- [ X] House Number (only allowing numbers in this field)
-	- [ X] Gender (male, female, do not wish to provide as radio buttons)
-- [ X] A button to place the order
-- [X ] Ensure the website loads when opening http://localhost:3000/
+- [X] A headline
+- [X] A section to select burgers that contains at least three items. Each item has:
+	- [X] A name
+	- [X] An image
+	- [X] Information about allergies 
+- [X] A section to collect customer information:
+	- [X] First- and Last Name (in one field)
+	- [X] E-Mail Address
+	- [X] Street
+	- [X] House Number (only allowing numbers in this field)
+	- [X] Gender (male, female, do not wish to provide as radio buttons)
+- [X] A button to place the order
+- [X] Ensure the website loads when opening http://localhost:3000/
 
 ## 03 CSS
 
