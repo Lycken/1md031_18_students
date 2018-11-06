@@ -34,8 +34,8 @@ Create a style.css file which contains:
 - [X] A rule to make the allergy information bold
 - [X] Different text and background color for the two different sections (burger selection and customer information)
 - [ ] Change the cursor when hovering over the order button
-- [ ] Adds margins to the sections and the order button
-- [ ] Add a border to the two sections
+- [X] Adds margins to the sections and the order button
+- [X] Add a border to the two sections
 - [ ] Create a header that palces an image behind the headline
 - [ ] Use a grid layout instead of tables for the burger selection section
 
