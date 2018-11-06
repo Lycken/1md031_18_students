@@ -31,8 +31,8 @@ Create an index.html file which contains:
 ## 03 CSS
 
 Create a style.css file which contains:
-- [ ] A rule to make the allergy information bold
-- [ ] Different text and background color for the two different sections (burger selection and customer information)
+- [X] A rule to make the allergy information bold
+- [X] Different text and background color for the two different sections (burger selection and customer information)
 - [ ] Change the cursor when hovering over the order button
 - [ ] Adds margins to the sections and the order button
 - [ ] Add a border to the two sections
