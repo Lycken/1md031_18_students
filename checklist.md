@@ -33,10 +33,10 @@ Create an index.html file which contains:
 Create a style.css file which contains:
 - [X] A rule to make the allergy information bold
 - [X] Different text and background color for the two different sections (burger selection and customer information)
-- [ ] Change the cursor when hovering over the order button
+- [X] Change the cursor when hovering over the order button
 - [X] Adds margins to the sections and the order button
 - [X] Add a border to the two sections
-- [ ] Create a header that palces an image behind the headline
+- [X] Create a header that palces an image behind the headline
 - [ ] Use a grid layout instead of tables for the burger selection section
 
 
