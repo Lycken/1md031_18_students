@@ -1,9 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>DELI-VERY</title>
-    </head>
-    <body>
-        <h1>Hello World!!!</h1>
-    </body>
-</html>
+<head >
+  <title>BestBurgeInTown</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/deli-very.css">
+  <script src="js/menu.js" defer></script>
+  <script src="https://vuejs.org/js/vue.js"></script>
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="js/js_script.js" defer></script>
+  <script src="js/vue_script.js" defer></script>
+
+</head>
+
+<body >
+  <div id="myID">
+    <input v-model="arbitraryVariableName">
+    <h1>
+      {{ arbitraryVariableName }}
+    </h1>
+
+    <main align="center" class="distance">
+      <div class="container">
+        <img src="https://d1wb0ukcj65cfk.cloudfront.net/restaurant_original/2082b249-0f68-45e7-8f80-f2c77841882d.jpg" class="transparent">
+        <div class="header"> <h1 > Welcome to Best Burgers In Town </h1> </div>
+      </div>
+    </main>
+
+    <section align="center" id="Burgers">
+      <h2 class = "distance"> Our Burgers </h2>
+      <h3 class = "distance"> Information about our lovely burgers </h3>
+
+      <div style="display:flex; justify-content:space-evenly; flex-wrap:wrap;">
+
+        <div v-for="burger in burgers" style="width: 300px;">
+          {{burger.name + ', innehåller '+burger.kCal + ' kCal'}}
+          <img v-bind:src="burger.img" width="200" alt="span">
+          <p burger.kCal> </p>
+          <p v-if="burger.lactose">Innehåller laktos</p>
+          <p v-if="burger.gluten">Innehåller gluten</p>
+          <p v-if="burger.veggie">
+            <input type="checkbox" id="Veggie" value="Veggie" v-model="burgerOrder">
+            <label for="Veggie">Veggie</label>
+          </p>
+          <p v-if="burger.vegan">
+            <input type="checkbox" id="Vegan" value="Vegan" v-model="burgerOrder">
+            <label for="Vegan">Vegan</label>
+          </p>
+          <p v-if="burger.meat">
+            <input type="checkbox" id="Meat" value="Meat" v-model="burgerOrder">
+            <label for="Meat">The Meat one</label>
+          </p>
+          <p v-if="burger.cheese">
+            <input type="checkbox" id="Cheese" value="Cheese" v-model="burgerOrder">
+            <label for="Cheese">Cheese</label>
+          </p>
+          <p v-if="burger.cute">
+            <input type="checkbox" id="Cute" value="Cute" v-model="burgerOrder">
+            <label for="Cute">The Cute one</label>
+          </p>
+        </div>
+        <div>
+          <br>
+          <span>Checked: {{ burgerOrder }}</span>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="Customer" class="distance">
+      <h2 class = "distance"> Customer Information </h2>
+      <h3 class = "distance"> This section is for information about the customer </h3>
+
+      <h4> Delivery information </h4>
+      <form>
+        <p>
+          <label for="firstname">Full Name</label><br>
+          <input type="text" id="fullname" name="fn" required="required" placeholder="First- and Last Name" v-model="custInfo.name">
+        </p>
+        <p>
+          <label for="email">Email</label><br>
+          <input type="email" id="email" name="em" required="required" placeholder="Email adress" v-model="custInfo.email">
+        </p>
+      </form>
+
+      <p>
+        <label for="recipient">Payment Method</label><br>
+        <select id="recipient" name="rcp">
+          <option>Credit Card</option>
+          <option>Cash</option>
+          <option>Swish</option>
+        </select>
+      </p>
+
+      <h5> Gender </h5>
+      <form action=>
+        <input type="checkbox" name="gender" id="male" value="male" v-model="custInfo.gender"> Male<br>
+        <input type="checkbox" name="gender" id="female" value="female" v-model="custInfo.gender"> Female<br>
+        <input type="checkbox" name="gender" id="non-binary" value="non-binary" v-model="custInfo.gender"> Non-Binary<br>
+        <input type="checkbox" name="gender" id="other" value="other" v-model="custInfo.gender"> Other<br><br>
+      </form>
+
+      <h1> Click in the map! </h1>
+      <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+      <div class="view-box">
+        <div id="dots" v-on:click="displayOrder">
+          <div v-bind:style="{ left: orderLocation.x + 'px', top: orderLocation.y + 'px'}">
+            {{'T'}}
+          </div>
+        </div>
+      </div>
+
+      <div id="orderButton">
+        <button v-on:click="addOrder"> Place my order!</button> {{ response }}
+      </div>
+
+      <div id="orders">
+        <button v-on:click="markDone()">Klart</button> {{ response }}
+      </div>
+
+
+    </section>
+    <div>
+      <hr>
+      <h2>
+        Your order
+      </div>
+    </div>
+
+
+    <hr>
+    <footer> &copy; Lycken Burger </footer>
+  </body>
+
+  </html>
